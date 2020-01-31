@@ -24,7 +24,7 @@ long int Soe(long int m,long int n)
     bool prime[n+1];
     memset(prime, true, sizeof(prime));
 
-    for (long int p=m; p*p<=n; p++)
+    for (long int p=2; p*p<=n; p++)
     {
 
         if (prime[p] == true)
