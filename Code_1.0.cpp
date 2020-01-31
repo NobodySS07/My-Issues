@@ -1,46 +1,45 @@
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-long int Soe(long int,long int);
-int main() {
 
-    long int T,count;long int low,high;
-cin>>T;
-for(long int i=0;i<T;i++)
+void Soe();
+
+long int numberOfPrimes[10000001] = {0};
+
+int main() 
 {
-    cin>>low>>high;
-    count= Soe(low,high);
-
-}
-  cout<<count;
-return 0;
-}
-
-
-
-long int Soe(long int m,long int n)
-{ int count=0;
-
-    bool prime[n+1];
-    memset(prime, true, sizeof(prime));
-
-    for (long int p=m; p*p<=n; p++)
+    long int T, count;
+    long int low,high;
+    Soe();
+    cin>>T;
+    for(long int i=0;i<T;i++)
     {
+        cin>>low>>high;
+        count = numberOfPrimes[high] - numberOfPrimes[low -1];
+        cout << count << endl;
+    }
+    return 0;
+}
 
+void Soe()
+{
+    bool prime[10000001];
+    memset(prime, true, sizeof(prime));
+    prime[0] = prime[1] = false;
+    
+    for (long int p = 2; p*p<=10000000; p++)
+    {
         if (prime[p] == true)
         {
-
-
-            for (long int i=p*p; i<=n; i += p)
+            for (long int i = p*p; i <= 10000000; i += p)
                 prime[i] = false;
         }
     }
-
-
-    for (long int p=m; p<=n; p++)
-       if (prime[p])
-          count++;
-
-    return count;
+    
+    for (long int p = 1; p <= 10000000; ++p)
+    {
+       if(prime[p])
+          numberOfPrimes[p] = numberOfPrimes[p -1] +1;
+        else
+            numberOfPrimes[p] = numberOfPrimes[p -1];
+    }
 }
-
