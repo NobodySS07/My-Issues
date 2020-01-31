@@ -6,7 +6,7 @@ bool prime[10000001];
 long int numberOfPrimes[10000001] = {0};
 int main() 
 {
-    long int T,range; double count,a;
+    long int count, T,range; double a;
     long int low,high;
     Soe();
     cin>>T;
