@@ -2,9 +2,8 @@
 using namespace std;
 
 void Soe();
-
+bool prime[10000001];
 long int numberOfPrimes[10000001] = {0};
-
 int main() 
 {
     long int T, count;
@@ -21,11 +20,9 @@ int main()
 }
 
 void Soe()
-{
-    bool prime[10000001];
+{ 
     memset(prime, true, sizeof(prime));
     prime[0] = prime[1] = false;
-    
     for (long int p = 2; p*p<=10000000; p++)
     {
         if (prime[p] == true)
