@@ -16,7 +16,7 @@ int main()
         count = numberOfPrimes[high] - numberOfPrimes[low -1];
         range=high-low+2;
         a=count*range/(count+1);
-        cout<<a;
+        cout<<a<<endl;
     }
     return 0;
 }
