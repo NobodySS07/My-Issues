@@ -4,9 +4,9 @@ using namespace std;
 void Soe();
 bool prime[10000001];
 long int numberOfPrimes[10000001] = {0};
-int main() 
+int main()             //defining the variables
 {
-    long int T, count;
+    long int T, count;   
     long int low,high;
     Soe();
     cin>>T;
@@ -32,7 +32,7 @@ void Soe()
         }
     }
     
-    for (long int p = 1; p <= 10000000; ++p)
+    for (long int p = 1; p <= 10000000; ++p)  //counting the variables
     {
        if(prime[p])
           numberOfPrimes[p] = numberOfPrimes[p -1] +1;
